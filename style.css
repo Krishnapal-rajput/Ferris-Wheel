@@ -1,103 +1,109 @@
-
+/* Style for the wheel */
 .wheel {
-  border: 2px solid black;
-  border-radius: 50%;
-  margin-left: 50px;
-  position: absolute;
-  height: 55vw;
-  width: 55vw;
-  max-width: 500px;
-  max-height: 500px;
-  animation-name: wheel;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  border: 2px solid black; /* Border around the wheel */
+  border-radius: 50%; /* Makes the wheel circular */
+  margin-left: 50px; /* Adds space on the left */
+  position: absolute; /* Allows positioning relative to the nearest positioned ancestor */
+  height: 55vw; /* Height relative to the viewport width */
+  width: 55vw; /* Width relative to the viewport width */
+  max-width: 500px; /* Maximum width constraint */
+  max-height: 500px; /* Maximum height constraint */
+  animation-name: wheel; /* Animation name for rotating the wheel */
+  animation-duration: 10s; /* Duration of one full rotation */
+  animation-iteration-count: infinite; /* Makes the animation repeat indefinitely */
+  animation-timing-function: linear; /* Keeps the speed constant */
 }
 
+/* Style for the lines radiating from the center of the wheel */
 .line {
-  background-color: black;
-  width: 50%;
-  height: 2px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: 0% 0%;
+  background-color: black; /* Color of the lines */
+  width: 50%; /* Width of each line */
+  height: 2px; /* Height of each line */
+  position: absolute; /* Allows positioning from the center */
+  top: 50%; /* Positions from the top */
+  left: 50%; /* Positions from the left */
+  transform-origin: 0% 0%; /* Sets the pivot point for rotation to the start of the line */
 }
 
+/* Positioning and rotation of the lines */
 .line:nth-of-type(2) {
-  transform: rotate(60deg);
+  transform: rotate(60deg); /* Rotate the second line */
 }
 .line:nth-of-type(3) {
-  transform: rotate(120deg);
+  transform: rotate(120deg); /* Rotate the third line */
 }
 .line:nth-of-type(4) {
-  transform: rotate(180deg);
+  transform: rotate(180deg); /* Rotate the fourth line */
 }
 .line:nth-of-type(5) {
-  transform: rotate(240deg);
+  transform: rotate(240deg); /* Rotate the fifth line */
 }
 .line:nth-of-type(6) {
-  transform: rotate(300deg);
+  transform: rotate(300deg); /* Rotate the sixth line */
 }
 
+/* Style for the cabins on the wheel */
 .cabin {
-  background-color: red;
-  width: 20%;
-  height: 20%;
-  position: absolute;
-  border: 2px solid;
-  transform-origin: 50% 0%;
-  animation: cabins 10s ease-in-out infinite;
+  background-color: red; /* Default color of the cabins */
+  width: 20%; /* Width of each cabin */
+  height: 20%; /* Height of each cabin */
+  position: absolute; /* Allows positioning from the center */
+  border: 2px solid; /* Border around each cabin */
+  transform-origin: 50% 0%; /* Sets the pivot point for rotation to the top center */
+  animation: cabins 10s ease-in-out infinite; /* Animation for cabin colors and rotation */
 }
 
+/* Positioning of the cabins */
 .cabin:nth-of-type(1) {
-  right: -8.5%;
-  top: 50%;
+  right: -8.5%; /* Position first cabin */
+  top: 50%; /* Center vertically */
 }
 .cabin:nth-of-type(2) {
-  right: 17%;
-  top: 93.5%;
+  right: 17%; /* Position second cabin */
+  top: 93.5%; /* Position towards the bottom */
 }
 .cabin:nth-of-type(3) {
-  right: 67%;
-  top: 93.5%;
+  right: 67%; /* Position third cabin */
+  top: 93.5%; /* Position towards the bottom */
 }
 .cabin:nth-of-type(4) {
-  left: -8.5%;
-  top: 50%;
+  left: -8.5%; /* Position fourth cabin */
+  top: 50%; /* Center vertically */
 }
 .cabin:nth-of-type(5) {
-  left: 17%;
-  top: 7%;
+  left: 17%; /* Position fifth cabin */
+  top: 7%; /* Position towards the top */
 }
 .cabin:nth-of-type(6) {
-  right: 17%;
-  top: 7%;
+  right: 17%; /* Position sixth cabin */
+  top: 7%; /* Position towards the top */
 }
 
+/* Keyframes for the wheel rotation */
 @keyframes wheel {
-   0% {
-     transform: rotate(0deg);
-   }
-   100% {
-     transform: rotate(360deg);
-   }
-}
-
-@keyframes cabins {
   0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    background-color: yellow;
-  }
-  50% {
-    background-color: purple;
-  }
-  75%{
-    background-color: yellow;
+    transform: rotate(0deg); /* Starting position */
   }
   100% {
-    transform: rotate(-360deg);
+    transform: rotate(360deg); /* End position after one full rotation */
+  }
+}
+
+/* Keyframes for the cabin color animation and rotation */
+@keyframes cabins {
+  0% {
+    transform: rotate(0deg); /* Starting position */
+  }
+  25% {
+    background-color: yellow; /* Change to yellow */
+  }
+  50% {
+    background-color: purple; /* Change to purple */
+  }
+  75% {
+    background-color: yellow; /* Change back to yellow */
+  }
+  100% {
+    transform: rotate(-360deg); /* End position after one full rotation in the opposite direction */
   }
 }
